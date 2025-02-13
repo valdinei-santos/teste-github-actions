@@ -5,6 +5,6 @@ export const handler = async (event) => {
       statusCode: 200,
       body: JSON.stringify(event),
     };
-    log('log com github actions: ', JSON.stringify(event));
+    log('event: ', JSON.stringify(event));
     return response;
   };
