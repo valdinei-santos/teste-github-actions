@@ -11,3 +11,29 @@ aws lambda update-function-code --function-name funcaoTeste --zip-file fileb://l
 
 # Marketplace do github com várias Actions já disponível
 https://github.com/marketplace/actions/aws-lambda-deploy
+
+# Primeiro configure SECRETS no repositório para que as Actions não exibam suas chaves de acesso da AWS
+1 - Vai no menu "Settings"
+2 - Vai no memu lateral esquerdo em "Secrets and variables"
+3 - Clica em Actions
+4 - Clica em New repository secret 
+5 - Criar as secrets AWS_ACCESS_KEY_ID, AWS_REGION e AWS_SECRET_ACCESS_KEY com os respectivos valores.
+
+# Crie a action
+1 - Ir no menu "Actions"
+2 - Procurar pela action no campo de busca. Caso não encontre clique em "set up a workflow yourself" para preencher na mão com o exemplo do Marketplace
+3 - https://github.com/marketplace/actions/aws-lambda-deploy
+4 - Copie o exemplo e cole no espaço que estará disponível após clicar em "set up a workflow yourself"
+5 - Faça os ajustes necessarios
+6 - Efetue o commit dessa action no repositório clicando o botão "Start commit", preenchendo a descrição apropriada e clicando no botão "Commit new file"
+7 - Ir no menu "Actions" para ver a nova action criada. Como foi feito um commit recente ela já será executada.
+8 - Clicar na action após a execução para ver os detalhes
+
+# Testar a action
+1 - Baixar o novo commit com a action "git pull origin main"
+2 - Fazer alguma alteração
+3 - Fazer o commit da alteração
+4 - Fazer o push no repositório "git push origin main" e observar no github se a action foi executada.
+5 - Olhar na AWS se o novo código da função lambda foi carregado.
+
+
