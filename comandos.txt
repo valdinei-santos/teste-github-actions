@@ -1,0 +1,13 @@
+# Se necessario tera que ser configurado o console para acessar a AWS
+aws configure
+
+# Zipar o codigo para enviar para AWS
+zip lambda.zip *.mjs
+
+# Para transferir o zip com o codigo da funcao lambda para minha conta na AWS, via linha de comando 
+aws lambda update-function-code --function-name funcaoTeste --zip-file fileb://lambda.zip
+
+# Criar github actions
+
+# Marketplace do github com várias Actions já disponível
+https://github.com/marketplace/actions/aws-lambda-deploy
